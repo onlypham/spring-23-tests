@@ -5,9 +5,9 @@
  )
  (method test (y)
   (begin
-   (inputi x)
+   (inputs x)
    (print x)
-   (inputi y)
+   (inputs y)
    (print y)
   )
  )

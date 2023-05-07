@@ -7,7 +7,9 @@
     )
   )
   (method setX (y)
-    (set x y)
-    (return 1)
+    (begin
+      (set x y)
+      (return 1)
+    )
   )
 )
