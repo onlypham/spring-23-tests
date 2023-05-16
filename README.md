@@ -1,6 +1,6 @@
 # CS 131 Spring 2023 - Project Test Cases
 
-Hi 👋 !! This repo contains open-source test cases for the [CS 131 - Spring 2023](https://ucla-cs-131.github.io/spring-23/)'s course-long project: making an interpreter. This should be used in conjunction with the [Project Autograder](https://github.com/UCLA-CS-131/spring-23-autograder). See more 🔎 for setting up the local autograder.
+Hi 👋 !! This repo contains open-source test cases for the [CS 131 - Spring 2023](https://ucla-cs-131.github.io/spring-23/)'s course-long project: making an interpreter. This should be used in conjunction with the [Project Autograder](https://github.com/UCLA-CS-131/spring-23-autograder). See more 🔎 for setting up the local autograder. ⚠️ DISCLAIMER: A working interpreter in this local repo may still not pass certain test cases in the BruinLearn autograder.
 
 ## Usage
 
