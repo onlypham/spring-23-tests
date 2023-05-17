@@ -10,7 +10,7 @@
 )
 
 (class person
-  (method void run ()
+  (method void  run ()
     (print 1)
   )
 )
