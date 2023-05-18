@@ -1,0 +1,18 @@
+(class main
+ (field d 100)
+
+ (method foo (x f)
+     (return x)
+ )
+ (method bar (x f)
+     (return d)
+ )
+ 
+ (method main ()
+   (begin
+   (print (call me bar 2 3))
+   (print (call me foo 1 0))
+   (print (call me bar 2 3))
+   )
+ )
+)

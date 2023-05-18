@@ -1,0 +1,134 @@
+(class living_thing
+    (method void a ()
+        (print "living_thing's A") 
+    )
+)
+(class mammal inherits living_thing
+    (method void c ()
+        (call me a) # this needs to call living_thing and not human's a ... maybe me should call the human when it is a human
+    )
+)
+(class human inherits mammal
+    (method void a ()
+        (print "human's A")
+    )
+    (method void b ()
+        (call me c)
+    ) # calls a method on mammal
+)
+
+(class main
+    (field living_thing temp null)
+    (method void main ()
+        (begin
+            (set temp (new human))
+            (call temp b) # should print "human's A"
+            (call (new mammal) c) # should print "living_thing's A"
+        )
+    )
+) 
+Sirfist19 — Today at 2:48 PM
+Still can't pass these, Incorrectness | test_bad_type_param (0/1)
+Incorrectness | test_incompat_compare2 (0/1)
+Incorrectness | test_invalid_return_type (0/1)
+Incorrectness | test_return_assign_type (0/1).
+If anyone has test cases for these then let me know!
+Ërįč Tæñgėrīńè — Today at 2:49 PM
+bad type param is checking if parameters in a method are typed with a class that's not defined yet
+Ërįč Tæñgėrīńè — Today at 2:52 PM
+passing this locally but not on gradescope 🥲
+Sirfist19 — Today at 2:52 PM
+So that isn't the actualy inher_9 case. I wrote that one. But fixing it got me to pass inher_9 on gradescope
+*actually
+minghao912 — Today at 2:53 PM
+fixing test_let3 got me test_let_shadow3 and 4 🙏
+Kenzie MacDougal — Today at 3:01 PM
+Is it impossible to get some of the return cases without having implemented inheritance
+minghao912 — Today at 3:23 PM
+omg thank you so much it worked 🙏
+Sirfist19 — Today at 3:30 PM
+Thanks so much! Writing a test case with this in mind, fixed test_bad_type_param and test_invalid_return_type!
+ZA — Today at 3:31 PM
+this didn't solve inher_9 for me 😭
+Matthew Ryan Teo — Today at 4:16 PM
+inher_9 could be more than 3 levels of polymorphism
+Steven Bash — Today at 4:21 PM
+just use any test and change int to in4t or somethign like that.  if there's not a class with that name => error
+jeff — Today at 4:39 PM
+for inheritance can we assume that the base class will be defined before the derived class
+nvm i just checked w barista
+ZA — Today at 4:40 PM
+nvm it worked in the end lmao
+Ërįč Tæñgėrīńè — Today at 5:03 PM
+Does anyone know what return_assign_type is testing
+skydragon — Today at 5:09 PM
+set with a return value like this:
+(class main
+    (field bool a false)
+ (method string foo () 
+   (return "dsfasdf"))
+ (method void main ()
+  (set a (call me foo))
+ )
+)
+ 
+Ërįč Tæñgėrīńè — Today at 5:34 PM
+hm thanks will try it out
+also just want to clarify the spec which says the following
+A type must either be a primitive type (e.g., int, bool, string) or a class type (which may only be a class defined above the current field definition - there's no need to handle the case for classes defined below)
+Ërįč Tæñgėrīńè — Today at 5:42 PM
+This doesn't apply to main class right since it has access to all other class types(?
+Matthew Ryan Teo — Today at 6:04 PM
+i tried this but still doesnt pass return_assign_type
+Matt [not the TA Matt] — Today at 6:14 PM
+has anyone run into this issue?
+
+RuntimeError: ErrorType.NAME_ERROR on line 11: duplicate method void
+
+i think i've gotten this error for all cases, i think it's related to using carey's code. im gonna look into this deeper but was wondering if anyone else had the same errors
+Image
+skydragon — Today at 6:16 PM
+maybe try with different type assignments? not sure though 
+Matthew Ryan Teo — Today at 6:16 PM
+gotcha i'll try
+Vincent Lin — Today at 6:17 PM
+you’re probably parsing the type declaration (second token) as the name of the method (what should be the third token) - if you’re using the v1 canonical solution, it takes code[1] or smth to extract the name because v1 didn’t have type decls
+jeff — Today at 6:56 PM
+ur reading the type void as the method name
+just have to change the index
+Max Deng — Today at 7:11 PM
+i've been using carey's code without issues so it's definitely not an issue with his implementation
+Max Deng — Today at 7:16 PM
+damn i pass this but still fail all of the let shadow test cases
+umer.dino — Today at 7:23 PM
+Warning: python3 3.11.3 already installed
+guys for some reason when i do python3 --version it says i have 3.9.6
+when i do brew upgrade python3, i get the warning
+Max Deng — Today at 7:30 PM
+figured it out, my let function was properly processing ints/bools but wasn't removing quotes from strings
+which is why i only passed some of the let cases
+just gained 5 points from typing 14 characters
+xlz — Today at 8:30 PM
+this worked for me ty!
+Matthew Ryan Teo — Today at 8:44 PM
+if you have python 3.11 installed you can run 
+
+python3.11 tester.py 2
+it’ll run that version instead of 3.9.6 
+umer.dino — Today at 9:48 PM
+python3.11 tester.py 2
+Traceback (most recent call last):
+  spring-23-project-starter/tester.py", line 12, in <module>
+    from harness import (
+ModuleNotFoundError: No module named 'harness' 
+did anyone get this error
+Vincent Lin — Today at 9:59 PM
+the autograder (spring-23-autograder) is a different repository from the project (spring-23-project-starter)
+i'm assuming you copied the tester.py module from the autograder to your project directory
+but that depends on other files within the autograder, namely harness.py and the test case files
+umer.dino — Today at 10:05 PM
+ah i see
+so do u put the files for my code in the autograder repo?
+Vincent Lin — Today at 10:05 PM
+that's what i did
+actually the first hour or so of my v1 implementation was me overengineering a stupid makefile to automate it for me lol

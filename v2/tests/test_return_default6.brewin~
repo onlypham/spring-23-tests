@@ -1,0 +1,13 @@
+(class main
+  (method void main ()
+    (print "hello " (call me void_call))
+    (print "other " (call me null_call))
+  )
+  
+  (method void void_call ()
+    (return)
+  )
+  (method main null_call ()
+    (return)
+  )
+)

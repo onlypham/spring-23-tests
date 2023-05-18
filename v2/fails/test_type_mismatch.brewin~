@@ -1,0 +1,9 @@
+(class main
+  (field student stud null)
+  (method void ask_prof_to_talk ((professor p)) (call p talk)))
+  (method void main ()
+    (begin
+      (set stud (new student))
+      (call me ask_prof_to_talk stud)
+    )
+  )
