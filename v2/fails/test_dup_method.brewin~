@@ -1,8 +1,0 @@
-(class main
- (method main ()
-  (print "hi")
- )
- (method main ()
-	(print "bye")
- )
-)

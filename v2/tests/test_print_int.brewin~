@@ -1,3 +1,0 @@
-(class main
- (method main () (print 5 6 7))
-)

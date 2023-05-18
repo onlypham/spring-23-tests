@@ -1,8 +1,0 @@
-(class main
- (method main ()
-  (begin
-		(print (+ "abc" "def"))
-		(print (+ (+ "ab" "c") (+ "d" "ef")))
-  )
- )
-)
