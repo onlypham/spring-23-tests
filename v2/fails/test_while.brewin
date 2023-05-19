@@ -1,5 +1,0 @@
-(class main
- (method main ()
-  (while 10 (print true))
- )
-)

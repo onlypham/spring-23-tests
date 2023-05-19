@@ -1,4 +1,4 @@
-(class d 
+(class d
   (method d foo ()
     (return)
   )
@@ -10,7 +10,7 @@
 
 (class main
     (field b a null)
- (method b foo () 
+ (method b foo ()
    (return (call b foo)))
  (method void main ()
   (set a (call me foo))
